@@ -1,0 +1,40 @@
+﻿.login-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 350px;
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+h2 {
+  color: #263b50;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #263b50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #1a2938;
+}

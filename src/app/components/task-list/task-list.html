@@ -1,0 +1,43 @@
+﻿<div class="contenedor-tareas">
+  <h2>Gestión de Tareas</h2>
+
+  @if (tareas$ | async; as tareas) {
+    @if (tareas.length > 0) {
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Prioridad</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (tarea of tareas; track tarea.id) {
+            <tr>
+              <td>{{ tarea.id }}</td>
+              <td>{{ tarea.titulo }}</td>
+              <td>{{ tarea.descripcion }}</td>
+              <td>{{ tarea.prioridad }}</td>
+              <td>
+                {{ tarea.completada ? 'Completada' : 'Pendiente' }}
+              </td>
+              <td>
+                <button (click)="eliminarTarea(tarea.id!)">
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    } @else {
+      <p>No hay tareas registradas.</p>
+    }
+  } @else {
+    <p>Cargando tareas...</p>
+  }
+</div>
